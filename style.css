@@ -1,0 +1,81 @@
+.content {
+    flex-grow: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.upload-box, .log-box, .hint-box {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,255,200,0.1);
+}
+
+.upload-box h1,
+.log-box h2,
+.hint-box h2 {
+    color: #00ffcc;
+    margin-bottom: 10px;
+}
+
+.log-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.log-box li {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #ccc;
+}
+
+.hint-box p {
+    font-style: italic;
+    color: #aaa;
+}
+
+/* すでにあるベースはそのままにして、追加でこれを入れる */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        box-shadow: none;
+        border-bottom: 1px solid #333;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .upload-box, .log-box, .hint-box {
+        padding: 15px;
+        font-size: 1em;
+    }
+
+    .sidebar h2 {
+        font-size: 1.1em;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .sidebar li {
+        margin: 0;
+    }
+
+    .sidebar a {
+        padding: 8px 12px;
+        background-color: #333;
+        border-radius: 5px;
+    }
+}

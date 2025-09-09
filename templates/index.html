@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>謎資料ポータル</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <button id="toggleBtn">☰</button>
+            <ul id="navList">
+                <li><a href="/">ホーム</a></li>
+                <li><a href="/upload">資料アップロード</a></li>
+                <li><a href="/archive">資料一覧</a></li>
+                <li><a href="/mystery">謎の分析</a></li>
+                <li><a href="/settings">設定</a></li>
+            </ul>
+        </div>
+
+        <main class="content" id="content">
+            <section class="upload-box">
+                <h1>謎資料アップロード</h1>
+                <form method="POST" enctype="multipart/form-data" action="/upload">
+                    <input type="file" name="file">
+                    <button type="submit">アップロード</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('toggleBtn');
+        const sidebar = document.getElementById('sidebar');
+        const content = document.getElementById('content');
+
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+            content.classList.toggle('shifted');
+        });
+    </script>
+</body>
+</html>
